@@ -1,9 +1,8 @@
 # vim : et sw=2
 
 require 'test/unit'
-require 'stcoverage/gcov_reading'
 
-require 'pp'
+require 'stcoverage/gcov_reading'
 
 class TestGcovReading < Test::Unit::TestCase
   def test_simple
