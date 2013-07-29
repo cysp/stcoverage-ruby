@@ -5,7 +5,8 @@ require 'stringio'
 
 module GCOVReading
   def self.io_from_io_or_string(io_or_string)
-    return io_or_string if io_or_string.respond_to?(:read) and io_or_string.respond_to?(:tell)
+    smells_like_io = io_or_string.respond_to?(:read) and io_or_string.respond_to?(:seek) and io_or_string.respond_to?(:tell)
+    return io_or_string if smells_like_io
     StringIO.open(io_or_string, 'rb')
   end
 
