@@ -126,8 +126,6 @@ class Stcoverage
     case version
     when GCOVHeader::VERSION_402
       true
-    when GCOVHeader::VERSION_404
-      true
     else
       false
     end

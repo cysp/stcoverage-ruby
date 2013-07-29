@@ -4,7 +4,6 @@ class GCOVHeader
   MAGIC_GCNO = 'oncg'
   MAGIC_GCDA = 'adcg'
   VERSION_402 = '*204'
-  VERSION_404 = '*404'
   STAMP_LLVM = 'MVLL'
 
   def initialize(magic, version, stamp)
