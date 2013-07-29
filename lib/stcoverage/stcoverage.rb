@@ -25,6 +25,8 @@ class Stcoverage
   def add_gcno_file(fname)
     io = open(fname, 'rb') or return false
     add_gcno_io(io)
+  rescue Errno::ENOENT
+    false
   end
 
   def add_gcno_io(io)
@@ -74,6 +76,8 @@ class Stcoverage
   def add_gcda_file(fname)
     io = open(fname, 'rb') or return false
     add_gcda_io(io)
+  rescue Errno::ENOENT
+    false
   end
 
   def add_gcda_io(io)
