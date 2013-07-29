@@ -20,6 +20,8 @@ class Stcoverage
     end
   end
 
+  attr_reader :functions
+
   def add_gcno_file(fname)
     io = open(fname, 'rb') or return false
     add_gcno_io(io)
