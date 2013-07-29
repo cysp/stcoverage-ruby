@@ -1,7 +1,8 @@
 # vim : et sw=2
 
 require 'test/unit'
-require 'stcoverage'
+
+require 'stcoverage/stcoverage'
 
 class TestInstantiation < Test::Unit::TestCase
   def test_simple
