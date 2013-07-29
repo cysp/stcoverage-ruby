@@ -14,6 +14,7 @@ class Stcoverage
     @functions = []
 
     unless files.nil?
+      files = [*files]
       files.select{ |x| x.end_with?('.gcno') }.each{ |f| add_gcno_file(f) }
       files.select{ |x| x.end_with?('.gcda') }.each{ |f| add_gcda_file(f) }
     end
