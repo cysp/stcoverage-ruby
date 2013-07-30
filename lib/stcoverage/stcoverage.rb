@@ -34,7 +34,7 @@ class Stcoverage
 
     header = reader.read_header
     return false if header.nil? or not header.is_gcno?
-    return false unless supported_version?(header.version)
+    return false unless supported_gcno_version?(header.version)
 
     function = nil
     success = true
@@ -85,7 +85,7 @@ class Stcoverage
 
     header = reader.read_header
     return false if header.nil? or not header.is_gcda?
-    return false unless supported_version?(header.version)
+    return false unless supported_gcda_version?(header.version)
 
     function = nil
     success = true
@@ -129,7 +129,18 @@ class Stcoverage
 
   private
 
-  def supported_version?(version)
+  def supported_gcno_version?(version)
+    case version
+    when GCOVHeader::VERSION_402
+      true
+    when GCOVHeader::VERSION_404
+      true
+    else
+      false
+    end
+  end
+
+  def supported_gcda_version?(version)
     case version
     when GCOVHeader::VERSION_402
       true
