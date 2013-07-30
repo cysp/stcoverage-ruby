@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.name        = 'stcoverage'
   s.license     = 'MPL-2.0'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.authors     = ['Scott Talbot']
   s.email       = 's@chikachow.org'
   s.summary     = 'Ruby Gcov file parsing'
